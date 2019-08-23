@@ -1,0 +1,14 @@
+/Users/erinmfenton/Development/MetroWeatherAPI/bin/Debug/netcoreapp2.2/MetroWeatherAPI.deps.json
+/Users/erinmfenton/Development/MetroWeatherAPI/bin/Debug/netcoreapp2.2/MetroWeatherAPI.runtimeconfig.json
+/Users/erinmfenton/Development/MetroWeatherAPI/bin/Debug/netcoreapp2.2/MetroWeatherAPI.runtimeconfig.dev.json
+/Users/erinmfenton/Development/MetroWeatherAPI/bin/Debug/netcoreapp2.2/MetroWeatherAPI.dll
+/Users/erinmfenton/Development/MetroWeatherAPI/bin/Debug/netcoreapp2.2/MetroWeatherAPI.pdb
+/Users/erinmfenton/Development/MetroWeatherAPI/obj/Debug/netcoreapp2.2/MetroWeatherAPI.csprojAssemblyReference.cache
+/Users/erinmfenton/Development/MetroWeatherAPI/obj/Debug/netcoreapp2.2/MetroWeatherAPI.csproj.CoreCompileInputs.cache
+/Users/erinmfenton/Development/MetroWeatherAPI/obj/Debug/netcoreapp2.2/MetroWeatherAPI.RazorAssemblyInfo.cache
+/Users/erinmfenton/Development/MetroWeatherAPI/obj/Debug/netcoreapp2.2/MetroWeatherAPI.RazorAssemblyInfo.cs
+/Users/erinmfenton/Development/MetroWeatherAPI/obj/Debug/netcoreapp2.2/MetroWeatherAPI.AssemblyInfoInputs.cache
+/Users/erinmfenton/Development/MetroWeatherAPI/obj/Debug/netcoreapp2.2/MetroWeatherAPI.AssemblyInfo.cs
+/Users/erinmfenton/Development/MetroWeatherAPI/obj/Debug/netcoreapp2.2/MetroWeatherAPI.RazorTargetAssemblyInfo.cache
+/Users/erinmfenton/Development/MetroWeatherAPI/obj/Debug/netcoreapp2.2/MetroWeatherAPI.dll
+/Users/erinmfenton/Development/MetroWeatherAPI/obj/Debug/netcoreapp2.2/MetroWeatherAPI.pdb
