@@ -16,7 +16,7 @@ namespace AllApis
         private string response;
         private MetroResponse metroResponse;
 
-        public async Task GetTrainArrivals()
+        public async Task<MetroResponse> GetTrainArrivals()
         {
             string url = "https://api.wmata.com/StationPrediction.svc/json/GetPrediction/" + DUNN_LORING_CODE;
             List<Tuple<string, string>> headers = new List<Tuple<string, string>>();
@@ -24,6 +24,7 @@ namespace AllApis
             headers.Add(header);
             string response = await ApiClient.GetAsync(url, headers);
             metroResponse = JsonConvert.DeserializeObject<MetroResponse>(response);
+            return metroResponse;
         }
         public void writeAllTrains()
         {

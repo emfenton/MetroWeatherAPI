@@ -27,7 +27,7 @@ namespace AllApis
 
         EventsResource.ListRequest request;
 
-        public void getCredential()
+        private void getCredential()
         {
             using (var stream =
                 new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
@@ -45,7 +45,7 @@ namespace AllApis
             }
         }
 
-        public void createApiService()
+        private void createApiService()
         {
             // Create Google Calendar API service.
             service = new CalendarService(new BaseClientService.Initializer()
@@ -56,7 +56,7 @@ namespace AllApis
         }   
             // Define parameters of request.
 
-        public void defineRequestParameters(int numberOfDays)
+        private void defineRequestParameters(int numberOfDays)
         {    
             request = service.Events.List("primary");
             request.TimeMin = DateTime.Now;
@@ -68,36 +68,18 @@ namespace AllApis
         }
 
             // List events.
-        public void listEvents()
+        private Events listEvents()
         {
             Events events = request.Execute();
-            
-            Console.WriteLine("Upcoming events:");
-            if (events.Items != null && events.Items.Count > 0)
-            {
-                foreach (var eventItem in events.Items)
-                {
-                    string when = eventItem.Start.DateTime.ToString();
-                    if (String.IsNullOrEmpty(when))
-                    {
-                        when = eventItem.Start.Date;
-                    }
-                    Console.WriteLine("{0} ({1})", eventItem.Summary, when);
-                }
-            }
-            else
-            {
-                Console.WriteLine("No upcoming events found.");
-            }
-            Console.Read();
+            return events;
         }
 
-        public void getTodaysEvents()
+        public Events getTodaysEvents()
         {
             getCredential();
             createApiService();
             defineRequestParameters(1);
-            listEvents();
+            return listEvents();
         }
     }
 }

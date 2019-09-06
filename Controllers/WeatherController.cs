@@ -14,7 +14,7 @@ namespace MetroWeatherAPI.Controllers
     [ApiController]
     public class WeatherController : ControllerBase
     {
-        // GET api/values
+        // GET api/weather
         [HttpGet]
         public ActionResult<string> Get()
         {
@@ -28,14 +28,6 @@ namespace MetroWeatherAPI.Controllers
     }
 }
         // private static async Task runApplicationAsynchronously() {
-        //     DarkSkyHandler darkSkyHandler = new DarkSkyHandler();
-        //     await darkSkyHandler.GetWeather();
-        //     Weather current = darkSkyHandler.getCurrentWeather();
-        //     Weather nextHour = darkSkyHandler.getNextHour();
-        //     Weather tomorrow = darkSkyHandler.getDay(1);
-        //     Weather twoDays = darkSkyHandler.getDay(2);
-        //     Console.WriteLine("The current temperature is " + current.Temperature + ". Later: " + nextHour.Summary + ". Tomorrow's weather will be: " + tomorrow.Summary +".");
-        //     Console.WriteLine("Two days weather: " + twoDays.Summary);
 
         //     MetroHandler metroHandler = new MetroHandler();
         //     await metroHandler.GetTrainArrivals();
