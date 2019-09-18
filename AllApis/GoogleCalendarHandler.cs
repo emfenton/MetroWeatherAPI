@@ -11,13 +11,12 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using Models;
 
 namespace AllApis
 {
-    class GoogleCalendarHandler
+    public class GoogleCalendarHandler
     {
-        // If modifying these scopes, delete your previously saved credentials
-        // at ~/.credentials/calendar-dotnet-quickstart.json
         static string[] Scopes = { CalendarService.Scope.CalendarReadonly };
         static string ApplicationName = "Metro Weather App";
 
@@ -68,13 +67,25 @@ namespace AllApis
         }
 
             // List events.
-        private Events listEvents()
+        private List<MetroCalendarEvent> listEvents()
         {
+            List<MetroCalendarEvent> eventsList = new List<MetroCalendarEvent>();
             Events events = request.Execute();
-            return events;
+            foreach (Event Event in events.Items)
+            {
+                CalendarTime time = new CalendarTime();
+                time.Date = Event.Start.Date;
+                time.DateTime = Event.Start.DateTime.Value;
+                time.TimeZone = Event.Start.TimeZone;
+                MetroCalendarEvent metroEvent = new MetroCalendarEvent();
+                metroEvent.Start = time;
+                metroEvent.Summary = Event.Summary;
+                eventsList.Add(metroEvent);
+            }
+            return eventsList;
         }
 
-        public Events getTodaysEvents()
+        public List<MetroCalendarEvent> getTodaysEvents()
         {
             getCredential();
             createApiService();
