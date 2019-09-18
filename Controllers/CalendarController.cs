@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AllApis;
 using Google.Apis.Calendar.v3.Data;
+using Newtonsoft.Json;
+using Models;
 
 namespace MetroWeatherAPI.Controllers
 {
@@ -17,11 +19,9 @@ namespace MetroWeatherAPI.Controllers
         public ActionResult<string> Get()
         {
             GoogleCalendarHandler googleCalendarHandler = new GoogleCalendarHandler();
-            Events events = googleCalendarHandler.getTodaysEvents();
-
-        }
-
-        
+            List<MetroCalendarEvent> metroEvent = googleCalendarHandler.getTodaysEvents();
+            string json = JsonConvert.SerializeObject(metroEvent);
+            return json;
         }
     }
 }
